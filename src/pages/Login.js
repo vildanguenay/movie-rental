@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { FirebaseContext } from '../context/firebase';
 
 import { Form } from '../components';
@@ -9,7 +9,7 @@ import { FooterContainer } from '../containers/footer';
 import * as ROUTES from '../constants/routes';
 
 export default function Login() {
-  const history = useHistory();
+  const history = useNavigate();
   const { firebase } = useContext(FirebaseContext);
 
   const [error, setError] = useState('');

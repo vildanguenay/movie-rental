@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Routes } from 'react-router-dom';
 import * as ROUTES from './constants/routes';
 
 import { Home, Login, Signup, Browse } from './pages';
@@ -14,7 +14,7 @@ function App() {
 
   return (
     <Router basename={process.env.PUBLIC_URL}>
-      <Switch>
+      <Routes>
         <IsUserRedirect
           user={user}
           loggedInPath={ROUTES.BROWSE}
@@ -39,7 +39,7 @@ function App() {
         >
           <Home />
         </IsUserRedirect>
-      </Switch>
+      </Routes>
     </Router>
   );
 }
